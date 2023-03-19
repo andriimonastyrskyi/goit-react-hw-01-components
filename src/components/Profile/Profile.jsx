@@ -51,24 +51,3 @@ Profile.propTypes = {
     likes: PropTypes.number.isRequired,
   }).isRequired,
 };
-
-// export default Profile;
-
-// Profile.propTypes = {
-//   avatar: PropTypes.string,
-//   username: PropTypes.string,
-//   tag: PropTypes.string,
-//   location: PropTypes.string,
-//   stats: PropTypes.objectOf(PropTypes.number),
-// };
-
-// FriendItem.propTypes = {
-//   friends: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       avatar: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       isOnline: PropTypes.bool.isRequired,
-//       id: PropTypes.number.isRequired,
-//     })
-//   ),
-// };

@@ -1,10 +1,24 @@
-import { FriendListWrap } from 'components/FriendList/Friend.styled';
-import { FriendItem } from 'components/FriendList/FriendItem';
+import PropTypes from 'prop-types';
+import { FriendListItem } from 'components/FriendList/FriendListItem';
+import { FriendWrap } from 'components/FriendList/Friend.styled';
 
 export const FriendList = ({ friends }) => {
   return (
-    <FriendListWrap>
-      <FriendItem friends={friends} />
-    </FriendListWrap>
+    <FriendWrap>
+      {friends.map(el => (
+        <FriendListItem key={el.id} data={el} />
+      ))}
+    </FriendWrap>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };
